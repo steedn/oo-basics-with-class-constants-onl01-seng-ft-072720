@@ -7,19 +7,13 @@ class Shoe
 
   def initialize(brand)
     @brand = brand
+    BRANDS << brand unless BRANDS.include?(brand)
   end
 
   def cobble
     self.condition = "new"
     puts "Your shoe is as good as new!"
   end
-
-  def brand=(brand)
-    @brand = brand
-    BRANDS << brand
-    binding.pry
-  end
-end
 
 # attr_accessor :author, :page_count  # remove the attr_accessor for genre
 # attr_reader :title, :genre  # add an attr_reader for genre
